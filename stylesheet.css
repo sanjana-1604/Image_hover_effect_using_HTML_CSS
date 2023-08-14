@@ -1,0 +1,57 @@
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body{
+    background: #555;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+    position: relative;
+    width:800px;
+    height:500px;
+    background: #222;
+}
+.clip
+{
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    transition: all 0.5s;
+}
+.clip1{
+    background-image: url("img/clip1.jpg");
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0% 0, 33% 0, 33% 100%, 0% 100%);
+}
+.clip2{
+    background-image: url("img/clip2.jpg");
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(33% 0, 66% 0, 66% 100%, 33% 100%);
+    margin-left:2px;
+}
+.clip3{
+    background-image: url("img/clip3.jpg");
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(66% 0, 100% 0, 100% 100%, 66% 100%);
+    margin-left:4px;
+}
+.container:hover .clip{
+    clip-path:polygon(100% 0,100% 0,100% 0,100% 0);
+}
+.container .clip:hover
+{
+    clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
